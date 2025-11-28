@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ConnectKitButton } from 'connectkit';
 import { ThemeToggle } from './ThemeToggle';
-import { Search, Package } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Package, Settings } from 'lucide-react';
 
 export function Navbar() {
+  const { t } = useTranslation();
+
   return (
     <nav className="border-b border-border bg-card">
       <div className="container mx-auto px-4">
@@ -18,25 +21,31 @@ export function Navbar() {
               to="/lost"
               className="text-foreground hover:text-primary transition-colors"
             >
-              Report Lost
+              {t('nav.reportLost')}
             </Link>
             <Link
               to="/found"
               className="text-foreground hover:text-primary transition-colors"
             >
-              Report Found
+              {t('nav.reportFound')}
             </Link>
             <Link
               to="/matching"
               className="text-foreground hover:text-primary transition-colors"
             >
-              Matches
+              {t('nav.matches')}
             </Link>
             <Link
               to="/dashboard"
               className="text-foreground hover:text-primary transition-colors"
             >
-              Dashboard
+              {t('nav.dashboard')}
+            </Link>
+            <Link
+              to="/settings"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              <Settings className="h-5 w-5" />
             </Link>
           </div>
 

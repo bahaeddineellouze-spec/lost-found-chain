@@ -14,6 +14,7 @@ import Found from "./pages/Found";
 import Matching from "./pages/Matching";
 import Dashboard from "./pages/Dashboard";
 import ItemDetail from "./pages/ItemDetail";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
                   <Route path="/found" element={<Found />} />
                   <Route path="/matching" element={<Matching />} />
                   <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/settings" element={<Settings />} />
                   <Route path="/item/:id" element={<ItemDetail />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>

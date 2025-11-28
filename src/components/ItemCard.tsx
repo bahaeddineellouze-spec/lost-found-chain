@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { ItemMetadata } from '@/types';
 import { getIPFSUrl } from '@/lib/ipfs';
+import { motion } from 'framer-motion';
 import { Calendar, MapPin, Tag } from 'lucide-react';
 import { StatusBadge } from './StatusBadge';
 import { Badge } from '@/components/ui/badge';
@@ -14,7 +15,13 @@ interface ItemCardProps {
 export function ItemCard({ item, showSimilarity }: ItemCardProps) {
   return (
     <Link to={`/item/${item.id}`}>
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+      <motion.div
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
         <div className="aspect-video w-full overflow-hidden bg-muted">
           {item.imageCid ? (
             <img
@@ -69,6 +76,7 @@ export function ItemCard({ item, showSimilarity }: ItemCardProps) {
           )}
         </CardContent>
       </Card>
+      </motion.div>
     </Link>
   );
 }
