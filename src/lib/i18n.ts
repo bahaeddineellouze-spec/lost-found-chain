@@ -1,0 +1,177 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const resources = {
+  en: {
+    translation: {
+      nav: {
+        home: 'Home',
+        reportLost: 'Report Lost',
+        reportFound: 'Report Found',
+        matches: 'Matches',
+        dashboard: 'Dashboard',
+        settings: 'Settings',
+      },
+      hero: {
+        title: 'Decentralized Lost & Found',
+        subtitle: 'Use blockchain technology and AI-powered matching to reunite lost items with their owners. Transparent, secure, and immutable.',
+        reportLost: 'Report Lost Item',
+        reportFound: 'Report Found Item',
+      },
+      features: {
+        howItWorks: 'How It Works',
+        reportItems: 'Report Items',
+        reportItemsDesc: 'Report lost or found items with detailed descriptions and images',
+        blockchainVerified: 'Blockchain Verified',
+        blockchainVerifiedDesc: 'All reports are stored on IPFS and verified on the blockchain',
+        aiMatching: 'AI Matching',
+        aiMatchingDesc: 'Advanced AI algorithms match lost and found items automatically',
+        easyRecovery: 'Easy Recovery',
+        easyRecoveryDesc: 'Simple claim process to reunite items with their rightful owners',
+      },
+      common: {
+        loading: 'Loading...',
+        submit: 'Submit',
+        cancel: 'Cancel',
+        save: 'Save',
+        next: 'Next',
+        previous: 'Previous',
+        finish: 'Finish',
+        connectWallet: 'Connect Wallet',
+        walletNotConnected: 'Wallet Not Connected',
+        pleaseConnect: 'Please connect your wallet to continue.',
+      },
+      settings: {
+        title: 'Settings',
+        language: 'Language',
+        theme: 'Theme',
+        light: 'Light',
+        dark: 'Dark',
+        system: 'System',
+        wallet: 'Wallet Management',
+        connectedAs: 'Connected as',
+        disconnect: 'Disconnect',
+        notConnected: 'Not Connected',
+      },
+    },
+  },
+  fr: {
+    translation: {
+      nav: {
+        home: 'Accueil',
+        reportLost: 'Déclarer Perdu',
+        reportFound: 'Déclarer Trouvé',
+        matches: 'Correspondances',
+        dashboard: 'Tableau de bord',
+        settings: 'Paramètres',
+      },
+      hero: {
+        title: 'Objets Trouvés Décentralisés',
+        subtitle: 'Utilisez la technologie blockchain et la correspondance IA pour réunir les objets perdus avec leurs propriétaires. Transparent, sécurisé et immuable.',
+        reportLost: 'Déclarer un Objet Perdu',
+        reportFound: 'Déclarer un Objet Trouvé',
+      },
+      features: {
+        howItWorks: 'Comment ça marche',
+        reportItems: 'Déclarer des objets',
+        reportItemsDesc: 'Déclarez des objets perdus ou trouvés avec des descriptions et des images détaillées',
+        blockchainVerified: 'Vérifié sur la Blockchain',
+        blockchainVerifiedDesc: 'Tous les rapports sont stockés sur IPFS et vérifiés sur la blockchain',
+        aiMatching: 'Correspondance IA',
+        aiMatchingDesc: 'Des algorithmes IA avancés font correspondre automatiquement les objets perdus et trouvés',
+        easyRecovery: 'Récupération facile',
+        easyRecoveryDesc: 'Processus de réclamation simple pour réunir les objets avec leurs propriétaires légitimes',
+      },
+      common: {
+        loading: 'Chargement...',
+        submit: 'Soumettre',
+        cancel: 'Annuler',
+        save: 'Enregistrer',
+        next: 'Suivant',
+        previous: 'Précédent',
+        finish: 'Terminer',
+        connectWallet: 'Connecter le Portefeuille',
+        walletNotConnected: 'Portefeuille Non Connecté',
+        pleaseConnect: 'Veuillez connecter votre portefeuille pour continuer.',
+      },
+      settings: {
+        title: 'Paramètres',
+        language: 'Langue',
+        theme: 'Thème',
+        light: 'Clair',
+        dark: 'Sombre',
+        system: 'Système',
+        wallet: 'Gestion du Portefeuille',
+        connectedAs: 'Connecté en tant que',
+        disconnect: 'Déconnecter',
+        notConnected: 'Non Connecté',
+      },
+    },
+  },
+  ar: {
+    translation: {
+      nav: {
+        home: 'الرئيسية',
+        reportLost: 'الإبلاغ عن مفقود',
+        reportFound: 'الإبلاغ عن موجود',
+        matches: 'المطابقات',
+        dashboard: 'لوحة التحكم',
+        settings: 'الإعدادات',
+      },
+      hero: {
+        title: 'المفقودات والموجودات اللامركزية',
+        subtitle: 'استخدم تقنية البلوكشين ومطابقة الذكاء الاصطناعي لإعادة الأشياء المفقودة إلى أصحابها. شفاف وآمن وثابت.',
+        reportLost: 'الإبلاغ عن شيء مفقود',
+        reportFound: 'الإبلاغ عن شيء موجود',
+      },
+      features: {
+        howItWorks: 'كيف يعمل',
+        reportItems: 'الإبلاغ عن الأشياء',
+        reportItemsDesc: 'أبلغ عن الأشياء المفقودة أو الموجودة بأوصاف وصور مفصلة',
+        blockchainVerified: 'موثق على البلوكشين',
+        blockchainVerifiedDesc: 'يتم تخزين جميع التقارير على IPFS والتحقق منها على البلوكشين',
+        aiMatching: 'مطابقة الذكاء الاصطناعي',
+        aiMatchingDesc: 'خوارزميات ذكاء اصطناعي متقدمة لمطابقة الأشياء المفقودة والموجودة تلقائيًا',
+        easyRecovery: 'استرجاع سهل',
+        easyRecoveryDesc: 'عملية مطالبة بسيطة لإعادة الأشياء إلى أصحابها الشرعيين',
+      },
+      common: {
+        loading: 'جارٍ التحميل...',
+        submit: 'إرسال',
+        cancel: 'إلغاء',
+        save: 'حفظ',
+        next: 'التالي',
+        previous: 'السابق',
+        finish: 'إنهاء',
+        connectWallet: 'ربط المحفظة',
+        walletNotConnected: 'المحفظة غير متصلة',
+        pleaseConnect: 'يرجى ربط محفظتك للمتابعة.',
+      },
+      settings: {
+        title: 'الإعدادات',
+        language: 'اللغة',
+        theme: 'السمة',
+        light: 'فاتح',
+        dark: 'داكن',
+        system: 'النظام',
+        wallet: 'إدارة المحفظة',
+        connectedAs: 'متصل كـ',
+        disconnect: 'قطع الاتصال',
+        notConnected: 'غير متصل',
+      },
+    },
+  },
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: localStorage.getItem('language') || 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+export default i18n;
